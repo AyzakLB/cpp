@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONVERTER="/home/ayzaq/1337-new/cursus/cpp/cpp-06/ex00/converter"
+CONVERTER="./converter"
 
 echo "========= Starting Robustness Tests ========="
 

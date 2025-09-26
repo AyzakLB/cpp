@@ -16,13 +16,16 @@ int main()
     // std::cout << DBL_MIN << std::endl;
 
     // Set fixed notation and maximum digits
-    std::cout << std::fixed << std::setprecision(50);
+    // std::cout << std::fixed << std::setprecision(50);
 
-    std::cout << "Float max:   " << std::numeric_limits<float>::max() << "\n";
-    std::cout << "Float min:   " << std::numeric_limits<float>::min() << "\n";
-    std::cout << "Double max:  " << std::numeric_limits<double>::max() << "\n";
-    std::cout << "Double min:  " << std::numeric_limits<double>::min() << "\n";
-
+    // std::cout << "Float max:   " << std::numeric_limits<float>::max() << "\n";
+    // std::cout << "Float min:   " << std::numeric_limits<float>::min() << "\n";
+    // std::cout << "Double max:  " << std::numeric_limits<double>::max() << "\n";
+    // std::cout << "Double min:  " << std::numeric_limits<double>::min() << "\n";
+    float a = 4.2f;
+    double b = 4.2;
+    std::cout << std::fixed << std::setprecision(std::numeric_limits<float>::digits10) << a << std::endl;
+    std::cout << std::fixed << std::setprecision(std::numeric_limits<double>::digits10) << (b) << std::endl;
 
     // std::cout <<  std::numeric_limits<float>::max() << std::endl;
     // std::cout << std::stof("asdl") << std::endl;

@@ -4,7 +4,6 @@
 #include <stdint.h>
 #include "dataHeader.hpp"
 
-
 class Serializer
 {
         Serializer(void);
