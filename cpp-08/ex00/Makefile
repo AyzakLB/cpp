@@ -3,7 +3,7 @@ CXXFLAGS:= -Wall -Wextra -Werror -std=c++98
 SRCS:=  main.cpp
 
 OBJS:= $(SRCS:.cpp=.o) 
-HEADERS:= whatever.hpp
+HEADERS:= easyfind.hpp
 RM:= rm -f
 NAME:= ex00
 
