@@ -22,10 +22,9 @@ int main()
     // std::cout << "Float min:   " << std::numeric_limits<float>::min() << "\n";
     // std::cout << "Double max:  " << std::numeric_limits<double>::max() << "\n";
     // std::cout << "Double min:  " << std::numeric_limits<double>::min() << "\n";
-    float a = 4.2f;
-    double b = 4.2;
-    std::cout << std::fixed << std::setprecision(std::numeric_limits<float>::digits10) << a << std::endl;
-    std::cout << std::fixed << std::setprecision(std::numeric_limits<double>::digits10) << (b) << std::endl;
+    float f = 12.34;
+    int a = reinterpret_cast<int> (f);
+    std::cout << a << std::endl;
 
     // std::cout <<  std::numeric_limits<float>::max() << std::endl;
     // std::cout << std::stof("asdl") << std::endl;

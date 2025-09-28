@@ -1,8 +1,9 @@
-#include <cstddef>
+#pragma once
+#include <iostream>
 
-template<typename T, typename F>
-void iter(T &arr, size_t size, F &func)
-{ 
-    for (size_t i = 0; i < size; i++)
-        func(arr[i]);
+template <typename Type1 ,typename Function>
+void iter(Type1 *array, unsigned int size, Function function) 
+{
+    for (unsigned int i = 0; i < size; ++i)
+        function(array[i]);
 }

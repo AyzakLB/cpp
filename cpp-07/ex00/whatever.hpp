@@ -1,26 +1,25 @@
-template<typename T>
-void swap(T &a, T &b)
+#pragma once
+template <typename T>
+void swap(T &arg1, T &arg2)
 {
     T temp;
-    temp = a;
-    a = b;
-    b = temp;
+    temp = arg1;
+    arg1 = arg2;
+    arg2 = temp;
 }
 
-template<typename T>
-T min(T a, T b)
+template <typename T>
+T min(T arg1, T arg2)
 {
-    if (a == b)
-        return b;
-    else
-        return a < b ? a : b;
+    if (arg1 < arg2)
+        return arg1;
+    return arg2;
+}
+template <typename T>
+T max(T arg1, T arg2)
+{
+    if (arg1 > arg2)
+        return arg1;
+    return arg2;
 }
 
-template<typename T>
-T max(T a, T b)
-{
-    if (a == b)
-        return b;
-    else
-        return a > b ? a : b;
-}

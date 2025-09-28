@@ -3,9 +3,9 @@ CXXFLAGS:= -Wall -Wextra -Werror -std=c++98
 SRCS:=  main.cpp
 
 OBJS:= $(SRCS:.cpp=.o) 
-HEADERS:= iter.hpp
+HEADERS:= Array.hpp
 RM:= rm -f
-NAME:= ex01
+NAME:= ex02
 
 all: $(NAME)
 
