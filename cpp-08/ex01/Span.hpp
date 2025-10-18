@@ -6,7 +6,6 @@
 #include <stdexcept>  
 #include <cstddef>
 
-
 class Span
 {
     std::vector<int> _array;
