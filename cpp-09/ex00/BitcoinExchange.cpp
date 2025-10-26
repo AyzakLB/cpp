@@ -144,6 +144,11 @@ void BitcoinExchange::parseInput()
         throw std::runtime_error(error("too large a number", number));
     _value = n;
 }
+static void checkHeader(std::string line)
+{
+    if (line != "date | value")
+        throw std::runtime_error("Error: bad header in input file");
+}
 void BitcoinExchange::start()
 {
     try
@@ -153,6 +158,7 @@ void BitcoinExchange::start()
             throw std::runtime_error("couldn't open " + _inputFileName);
         std::string line;
         std::getline(inputFile, line);
+        checkHeader(line);  
         while (std::getline(inputFile, line))
         {
             try 
