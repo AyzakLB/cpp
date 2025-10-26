@@ -2,20 +2,25 @@
 # include <iostream>
 # include <vector>
 # include <deque>
+# include <sstream>
+# include <algorithm>
+# include <ctime>
+# include <limits.h>
+#include <cstdlib>
 
 class PmergeMe
 {
+    std::vector<int> _numberVector;
+    std::deque<int> _numberDeque;
+    std::vector<int> _numbers;
     public:
-        PmergeMe(void);
+        PmergeMe();
         PmergeMe(const PmergeMe& other);
         PmergeMe &operator=(const PmergeMe &other);
         ~PmergeMe();
-        static void sortVector(std::vector<int> &vec);
-        static void sortDeque(std::deque<int> &deq);
-        static void fordJohnsonVector(std::vector<int> &vec);
-        static void fordJohnsonDeque(std::deque<int> &deq);
-        static void insertSortedVector(std::vector<int> &sorted, int value);
-        static void insertSortedDeque(std::deque<int> &sorted, int value);
+        void start(int ac, char **av);
+        std::vector<int> sortVector(std::vector<int> input, int level);
+        std::deque<int> sortDeque(std::deque<int> input, int level);
 };
 
 

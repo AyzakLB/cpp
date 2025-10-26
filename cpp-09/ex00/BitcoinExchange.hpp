@@ -20,32 +20,22 @@ class BitcoinExchange
     std::string _date;
     float _value;
     std::string _input;
+    std::string _inputFileName;
     std::string _line;
-    static const std::map<t_date, float> _bitcoinDB;
+    static  const std::map<std::string, float> _bitcoinDB;
+    BitcoinExchange(void);
     public:
-        BitcoinExchange(void);
-        BitcoinExchange(const std::string &input, const size_t &line);
+        BitcoinExchange(const std::string&);
         BitcoinExchange(const BitcoinExchange& other);
         BitcoinExchange &operator=(const BitcoinExchange &other);
         ~BitcoinExchange();
         void start();
         void parseInput();
-        void dateIsValid(); // throws!
-        static std::list<std::string> split(std::string string, char delimiter);
-        bool hasNonDigit(std::list<std::string> list);
-        static long long strToLong(std::string number);
-        static t_date splitDate(std::string dateStr);
-        t_date getCurrDate();
-        static std::string longToStr(long long number);
+        t_date splitDate(std::string dateStr);
+        std::string longToStr(double number);
         std::string error(std::string, std::string);
-        static std::map<t_date, float> initDB();
-        class invalidDate : public std::exception{
-            std::string _message;
-            public:
-                invalidDate(std::string date, std::string line);
-                ~invalidDate() throw();
-                const char *what() const throw();
-        };
+        static std::map<std::string, float> initDB();
+        std::map<std::string, float>::const_iterator getValue();
 };
 
 

@@ -1,40 +1,25 @@
 #include "RPN.hpp"
 
-// Default constructor
-RPN::RPN(void)
-{
-    std::cout << "Default constructor called" << std::endl;
-    return ;
-}
+RPN::RPN(void){}
 
-// Copy constructor
 RPN::RPN(const RPN &other)
 {
-    std::cout << "Copy constructor called" << std::endl;
     (void) other;
     return ;
 }
-
-// Assignment operator overload
 RPN &RPN::operator=(const RPN &other)
 {
-    std::cout << "Assignment operator called" << std::endl;
     (void) other;
     return (*this);
 }
+RPN::~RPN(void){}
 
-// Destructor
-RPN::~RPN(void)
-{
-    std::cout << "Destructor called" << std::endl;
-    return ;
-}
 
 void RPN::calculate(std::string expression)
 {
     std::stack<int> calculator;
     bool foundChar = false;
-    
+
     for (size_t i = 0; i < expression.length(); ++i)
     {
         if (expression[i] == ' ')
@@ -70,7 +55,7 @@ void RPN::calculate(std::string expression)
         }
     }
     if (calculator.size() != 1)
-        throw std::runtime_error("Error: last");
+        throw std::runtime_error("Error: invalid expression");
     std::cout << calculator.top() << std::endl;
 }
 
